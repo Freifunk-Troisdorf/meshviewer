@@ -1,21 +1,37 @@
 const fs = require('fs');
+
+// stringify functions https://gist.github.com/cowboy/3749767
+var stringify = function (obj) {
+  var placeholder = '____PLACEHOLDER____';
+  var fns = [];
+  var json = JSON.stringify(obj, function (key, value) {
+    if (typeof value === 'function') {
+      fns.push(value);
+      return placeholder;
+    }
+    return value;
+  }, 2);
+  json = json.replace(new RegExp('"' + placeholder + '"', 'g'), function () {
+    return fns.shift();
+  });
+  return json;
+};
+
 module.exports = function (gulp, plugins, config, env) {
   return function html() {
     return gulp.src(env.production() ? config.build + '/*.html' : 'html/*.html')
-      .pipe(plugins.inject(gulp.src(['config.json']), {
+      .pipe(plugins.inject(gulp.src(['config.js']), {
         starttag: '<!-- inject:config -->',
-        transform: function (filePath, customConfig) {
-          var defaultConfig = fs.readFileSync('config.default.json', 'utf8');
-          var buildConfig = Object.assign(
-            JSON.parse(JSON.minify(defaultConfig)),
-            JSON.parse(JSON.minify(customConfig.contents.toString('utf8')))
-          );
-          return '<script>var jsonData =' +
-            JSON.stringify(buildConfig)
+        transform: function () {
+          delete require.cache[require.resolve('../../config.default')];
+          delete require.cache[require.resolve('../../config')];
+          var buildConfig = Object.assign({}, require('../../config.default')(), require('../../config')());
+          return '<title>' + buildConfig.siteName + ' - loading...</title>' +
+            '<script>window.config =' +
+            stringify(buildConfig)
               .replace('<!-- inject:cache-breaker -->',
                 Math.random().toString(12).substring(7)) +
-            ';</script>'
-            ;
+            ';</script>';
         }
       }))
       .pipe(env.production(plugins.kyhInlineSource({ compress: false })))

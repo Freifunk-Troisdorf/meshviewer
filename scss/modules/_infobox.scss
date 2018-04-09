@@ -1,7 +1,30 @@
 .infobox {
-  .clients {
-    color: $color-online;
-    font-family: $font-family-icons;
+  .clients,
+  .gateway {
+    display: flex;
+    flex-flow: wrap;
+
+    span {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .ion-people,
+    .ion-arrow-right-c {
+      font-size: 1.5em;
+    }
+  }
+
+  .node-links {
+    table-layout: fixed;
+
+    th,
+    td {
+      &:nth-child(3),
+      &:nth-child(5) {
+        width: 12%;
+      }
+    }
   }
 
   input,

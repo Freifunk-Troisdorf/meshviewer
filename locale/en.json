@@ -6,6 +6,7 @@
     "links": "Links",
     "clients": "Clients",
     "distance": "Distance",
+    "connectionType": "Connection type",
     "tq": "Transmit quality",
     "lastOnline": "online, last message %{time} (%{date})",
     "lastOffline": "offline, last message %{time} (%{date})",
@@ -26,7 +27,9 @@
     "systemLoad": "Load average",
     "ram": "Memory usage",
     "ipAddresses": "IP addresses",
-    "selectedGateway": "Selected gateway",
+    "nexthop": "Nexthop",
+    "selectedGatewayIPv4": "Selected ipv4-gateway",
+    "selectedGatewayIPv6": "Selected ipv6-gateway",
     "link": "Link |||| Links",
     "node": "Node |||| Nodes",
     "new": "New nodes",
@@ -44,13 +47,14 @@
     "clients": "with %{smart_count} client |||| with %{smart_count} clients",
     "gateway": "on %{smart_count} gateway |||| on %{smart_count} gateways",
     "lastUpdate": "Last update",
-    "nodeNew": "Node is new",
-    "nodeOnline": "Node is online",
-    "nodeOffline": "Node is offline",
+    "nodeNew": "new",
+    "nodeOnline": "online",
+    "nodeOffline": "offline",
     "aboutInfo": "<h2>About Meshviewer</h2> <p>You can zoom in with double-click and zoom out with shift+double-click</p>",
     "actual": "Current",
     "stats": "Statistics",
-    "about": "About"
+    "about": "About",
+    "toggle": "Toggle Sidebar"
   },
   "button": {
     "switchView": "Switch view",
@@ -85,5 +89,8 @@
   "yes": "yes",
   "no": "no",
   "unknown": "unknown",
-  "none": "none"
+  "others": "other",
+  "none": "none",
+  "remove": "remove",
+  "close": "close"
 }

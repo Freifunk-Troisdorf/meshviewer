@@ -7,56 +7,8 @@ if (!String.prototype.includes) {
   };
 }
 
-if (!String.prototype.startsWith) {
-  String.prototype.startsWith = function (searchString, position) {
-    position = position || 0;
-    return this.substr(position, searchString.length) === searchString;
-  };
-}
-
-if (!String.prototype.repeat) {
-  String.prototype.repeat = function (count) {
-    'use strict';
-    if (this === null) {
-      throw new TypeError('can\'t convert ' + this + ' to object');
-    }
-    var str = '' + this;
-    count = +count;
-    if (count < 0) {
-      throw new RangeError('repeat count must be non-negative');
-    }
-    if (count === Infinity) {
-      throw new RangeError('repeat count must be less than infinity');
-    }
-    count = Math.floor(count);
-    if (str.length === 0 || count === 0) {
-      return '';
-    }
-    // Ensuring count is a 31-bit integer allows us to heavily optimize the
-    // main part. But anyway, most current (August 2014) browsers can't handle
-    // strings 1 << 28 chars or longer, so:
-    if (str.length * count >= 1 << 28) {
-      throw new RangeError('repeat count must not overflow maximum string size');
-    }
-    var rpt = '';
-    for (; ;) {
-      if ((count & 1) === 1) {
-        rpt += str;
-      }
-      count >>>= 1;
-      if (count === 0) {
-        break;
-      }
-      str += str;
-    }
-    // Could we try:
-    // return Array(count + 1).join(this);
-    return rpt;
-  };
-}
-
 if (typeof Object.assign !== 'function') {
-  Object.assign = function(target, varArgs) { // .length of function is 2
+  Object.assign = function (target, varArgs) { // .length of function is 2
     if (target == null) { // TypeError if undefined or null
       throw new TypeError('Cannot convert undefined or null to object');
     }
@@ -77,4 +29,26 @@ if (typeof Object.assign !== 'function') {
     }
     return to;
   };
+}
+
+// eslint-disable-next-line consistent-return
+(function () {
+  if (typeof window.CustomEvent === 'function') {
+    return false;
+  }
+
+  function CustomEvent(event, params) {
+    params = params || { bubbles: false, cancelable: false, detail: undefined };
+    var evt = document.createEvent('CustomEvent');
+    evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+    return evt;
+  }
+
+  CustomEvent.prototype = window.Event.prototype;
+
+  window.CustomEvent = CustomEvent;
+})();
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
 }

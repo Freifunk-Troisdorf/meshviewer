@@ -12,6 +12,13 @@
     .sidebarhandle {
       left: $button-distance;
       transform: scale(-1, 1);
+
+      // sass-lint:disable-block nesting-depth
+      &[aria-label] {
+        &::after {
+          transform: scale(-1, 1) translate(105px, 52px) !important; // sass-lint:disable-line no-important
+        }
+      }
     }
     @media screen and (max-width: map-get($grid-breakpoints, lg) - 1) {
       width: auto;
@@ -23,7 +30,8 @@
   }
 
   .node-list,
-  .node-links {
+  .node-links,
+  .link-list {
     th,
     td {
       &:first-child {
@@ -40,36 +48,29 @@
     }
   }
 
+  .link-list {
+    th,
+    td {
+      &:nth-child(2) {
+        width: 60%;
+      }
+    }
+  }
+
   .node-links {
     padding-bottom: 15px;
 
     th,
     td {
       &:first-child {
-        width: 50px;
-      }
-    }
-  }
-
-  .link-list {
-    th,
-    td {
-      &:nth-child(1) {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 66%;
+        width: 35px;
       }
     }
   }
 
   .container {
-    @if $shadows == 1 {
-      @include shadow(2);
-    } @else {
-      border-right: 1px solid darken($color-white, 10%);
-    }
     background: transparentize($color-white, .03);
+    border-right: 1px solid darken($color-white, 10%);
     min-height: 100vh;
     overflow-y: visible;
 
@@ -91,9 +92,6 @@
     .container,
     .infobox {
       border-radius: 0;
-      @if $shadows == 1 {
-        box-shadow: none;
-      }
       margin: 0;
     }
   }
@@ -120,12 +118,18 @@
   left: $sidebar-width + 2 * $button-distance;
   position: fixed;
   top: $button-distance;
-  transition: left .5s, box-shadow .5s, color .5s, transform .5s;
+  transition: left .5s, color .5s, transform .5s;
   z-index: 1010;
 
-  &::after {
+  &::before {
     content: '\f124';
     padding-right: .125em;
+  }
+
+  &[aria-label] {
+    &::after {
+      transform: translate(-45px, 52px) !important; // sass-lint:disable-line no-important
+    }
   }
 }
 
@@ -135,8 +139,4 @@
 
 .offline {
   color: $color-offline;
-}
-
-.unseen {
-  color: $color-unseen;
 }
