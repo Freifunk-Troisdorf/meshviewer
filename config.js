@@ -35,7 +35,7 @@ module.exports = function () {
           'subdomains': '1234',
           'attribution': ' <a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>',
           'mode': 'night',
-          'start': 19,
+          'start': 23,
           'end': 7
         }
       },
@@ -81,13 +81,13 @@ module.exports = function () {
     'fixedCenter': [
       // Northwest
       [
-        49.3522,
-        11.7752
+        50.8428,
+        7.0367
       ],
       // Southeast
       [
-        48.7480,
-        12.8917
+        50.7768,
+        7.1919
       ]
     ],
     'siteNames': [
