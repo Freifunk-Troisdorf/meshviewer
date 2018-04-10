@@ -98,7 +98,7 @@ module.exports = function () {
       {
         'site': 'inn',
         'name': 'Innenstadt'
-      }
+      },
       {
         'site': 'flu',
         'name': 'Soziale Einrichtungen'
