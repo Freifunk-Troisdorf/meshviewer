@@ -11,7 +11,9 @@ module.exports = function () {
     ],
     // Array of data provider are supported
     'dataPath': [
-      'https://map.freifunk-troisdorf.de/data/tdf4/'
+      'https://map.freifunk-troisdorf.de/data/tdf4/',
+      'https://map.freifunk-troisdorf.de/data/tdf5/',
+      'https://map.freifunk-troisdorf.de/data/tdf6/'
     ],
     'siteName': 'Freifunk Troisdorf',
     'mapLayers': [
