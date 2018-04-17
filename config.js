@@ -11,7 +11,7 @@ module.exports = function () {
     ],
     // Array of data provider are supported
     'dataPath': [
-      'https://data.freifunk-troisdorf.de/yanic/'
+      'http://4.fftdf.de/'
     ],
     'siteName': 'Freifunk Troisdorf',
     'mapLayers': [
