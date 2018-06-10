@@ -4,24 +4,57 @@ module.exports = function () {
     'nodeInfos': [
       {
         'name': 'Clientstatistik',
-        'href': 'https://statistik.freifunk-troisdorf.de/render/d-solo/oUBqc1Wmk/nodes?orgId=1&var-hostname={NODE_NAME}&refresh=10s&panelId=2&theme=light&width=1000&height=500&tz=UTC%2B02%3A00',
-        'image': 'https://statistik.freifunk-troisdorf.de/render/d-solo/oUBqc1Wmk/nodes?orgId=1&var-hostname={NODE_NAME}&refresh=10s&panelId=2&theme=light&width=1000&height=500&tz=UTC%2B02%3A00',
-        'title': 'Knoten {NODE_ID} - weiteren Statistiken'
+        'href': 'https://grafana.bremen.freifunk.net/d/000000002/node?var-node={NODE_ID}',
+        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000002/node?panelId=1&var-node={NODE_ID}&from=now-86399s&width=650&height=350&theme=light',
+        'title': 'Entwicklung der Anzahl der Clients innerhalb des letzten Tages'
       },
       {
-        'name': 'Traffic',
-        'href': 'https://statistik.freifunk-troisdorf.de/render/d-solo/oUBqc1Wmk/nodes?orgId=1&var-hostname={NODE_NAME}&refresh=10s&panelId=3&theme=light&width=1000&height=500&tz=UTC%2B02%3A00',
-        'image': 'https://statistik.freifunk-troisdorf.de/render/d-solo/oUBqc1Wmk/nodes?orgId=1&var-hostname={NODE_NAME}&refresh=10s&panelId=3&theme=light&width=1000&height=500&tz=UTC%2B02%3A00',
-        'title': 'Knoten {NODE_ID} - weiteren Statistiken'
+        'name': 'Trafficstatistik',
+        'href': 'https://grafana.bremen.freifunk.net/d/000000002/node?var-node={NODE_ID}',
+        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000002/node?panelId=2&var-node={NODE_ID}&from=now-86399s&width=650&height=350&theme=light',
+        'title': 'Entwicklung des Traffic innerhalb des letzten Tages'
+      },
+      {
+        'name': 'Hardwareauslastung',
+        'href': 'https://grafana.bremen.freifunk.net/d/000000002/node?var-node={NODE_ID}',
+        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000002/node?panelId=4&var-node={NODE_ID}&from=now-86399s&width=650&height=350&theme=light',
+        'title': 'Loadavg und Arbeitspeicherauslastung innerhalb des letzten Tages'
+      },
+      {
+        'name': 'Airtime',
+        'href': 'https://grafana.bremen.freifunk.net/d/000000002/node?var-node={NODE_ID}',
+        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000002/node?panelId=5&var-node={NODE_ID}&from=now-86399s&width=650&height=350&theme=light',
+        'title': 'Auslastung des WLAN-Frequenz innerhalb des letzten Tages'
+      }
+    ],
+    'linkInfos': [
+      {
+        'name': 'Statistik für alle Links zwischen diese Knoten',
+        'href': 'https://grafana.bremen.freifunk.net/d/000000002/node?var-node={SOURCE_ID}&var-nodetolink={TARGET_ID}',
+        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000002/node?panelId=7&var-node={SOURCE_ID}&var-nodetolink={TARGET_ID}&from=now-86399s&width=650&height=350&theme=light',
+        'title': 'Linkstatistik des letzten Tages, min und max aller Links zwischen diesen Knoten'
+      }
+    ],
+    'linkTypeInfos': [
+      {
+        'name': 'Statistik für {TYPE}',
+        'href': 'https://grafana.bremen.freifunk.net/d/000000002/node?var-node={SOURCE_ID}&var-nodetolink={TARGET_ID}&var-source_mac={SOURCE_ADDR}&var-target_mac={TARGET_ADDR}',
+        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000002/node?panelId=8&var-node={SOURCE_ID}&var-nodetolink={TARGET_ID}&var-source_mac={SOURCE_ADDR}&var-target_mac={TARGET_ADDR}&from=now-86399s&width=650&height=350&theme=light',
+        'title': 'Linkstatistik des letzten Tages des einzelnen Links in beide Richtungen'
+      }
+    ],
+    'globalInfos': [
+      {
+        'name': 'Wochenstatistik',
+        'href': 'https://grafana.bremen.freifunk.net/d/000000001/globals',
+        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000001/globals?panelId=2&from=now-7d&width=650&height=350&theme=light',
+        'title': 'Entwicklung der Anzahl der Knoten und der Clients innerhalb der letzten 7 Tage'
       }
     ],
     // Array of data provider are supported
-    'dataPath': [
-      'https://map.freifunk-troisdorf.de/data/tdf4/',
-      'https://map.freifunk-troisdorf.de/data/tdf5/',
-      'https://map.freifunk-troisdorf.de/data/tdf6/'
-    ],
-    'siteName': 'Freifunk Troisdorf',
+    'dataPath': ['https://downloads.bremen.freifunk.net/data/'],
+    'siteName': 'Freifunk Bremen',
+    'maxAge': 7,
     'mapLayers': [
       {
         'name': 'Freifunk Regensburg',
@@ -30,8 +63,16 @@ module.exports = function () {
         'config': {
           'maxZoom': 20,
           'subdomains': '1234',
-          'attribution': '<a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>',
-          'start': 6
+          'attribution': '<a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>'
+        }
+      },
+      {
+        'name': 'Freifunk Bremen',
+        'url': '//tiles.bremen.freifunk.net/{z}/{x}/{y}{retina}.png',
+        'config': {
+          'maxZoom': 20,
+          'type': 'osm',
+          'attribution': '<a href="https://github.com/mapbox/mapbox-studio-osm-bright.tm2">Design</a> © <a href="https://www.mapbox.com/">Mapbox</a>, <a href="http://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a> — Daten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }
       },
       {
@@ -42,9 +83,7 @@ module.exports = function () {
           'maxZoom': 20,
           'subdomains': '1234',
           'attribution': ' <a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>',
-          'mode': 'night',
-          'start': 23,
-          'end': 7
+          'mode': 'night'
         }
       },
       {
@@ -56,60 +95,41 @@ module.exports = function () {
         }
       },
       {
-        'name': 'HERE',
-        // Please use your own API key - Free plan is on right side after the pay plans
-        'url': 'https://{s}.base.maps.api.here.com/maptile/2.1/maptile/newest/normal.day/{z}/{x}/{y}/256/png8?app_id=YOUR_KEY&app_code=YOUR_CODE&lg=deu',
-        'config': {
-          'attribution': 'Map &copy; 1987-2014 <a href="http://developer.here.com">HERE</a>',
-          'subdomains': '1234',
-          'maxZoom': 20
-        }
-      },
-      {
         'name': 'Esri.WorldImagery',
         'url': '//server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
         'config': {
           'maxZoom': 20,
           'attribution': 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
         }
-      },
-      {
-        'name': 'HERE.hybridDay',
-        // Please use your own API key - Free plan is on right side after the pay plans
-        'url': 'https://{s}.aerial.maps.api.here.com/maptile/2.1/maptile/newest/{variant}/{z}/{x}/{y}/256/png8?app_id=YOUR_KEY&app_code=YOUR_CODE&lg=deu',
-        'config': {
-          'attribution': 'Map &copy; 1987-2014 <a href="http://developer.here.com">HERE</a>',
-          'subdomains': '1234',
-          'variant': 'hybrid.day',
-          'maxZoom': 20
-        }
       }
     ],
     // Set a visible frame
     'fixedCenter': [
-      // Northwest
+    // Northwest
       [
-        50.8428,
-        7.0367
+        53.27917,
+        8.31390
       ],
       // Southeast
       [
-        50.7768,
-        7.1919
+        52.9734,
+        9.2037
       ]
     ],
     'siteNames': [
       {
-        'site': 'tdf',
-        'name': 'Troisdorf All'
+        'site': 'ffhb',
+        'name': 'Freifunk Bremen'
+      }
+    ],
+    'linkList': [
+      {
+        'title': 'Impressum',
+        'href': 'https://bremen.freifunk.net/impressum.html'
       },
       {
-        'site': 'inn',
-        'name': 'Innenstadt'
-      },
-      {
-        'site': 'flu',
-        'name': 'Soziale Einrichtungen'
+        'title': 'Datenschutz',
+        'href': 'https://wiki.bremen.freifunk.net/Infrastruktur/Datenschutz'
       }
     ]
   };
