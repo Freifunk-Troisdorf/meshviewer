@@ -101,21 +101,11 @@ module.exports = function () {
     'linkList': [
       {
         'title': 'Impressum',
-        'href': 'https://bremen.freifunk.net/impressum.html'
+        'href': 'http://freifunk-troisdorf.de/kontakt/impressum/'
       },
       {
         'title': 'Datenschutz',
-        'href': 'https://wiki.bremen.freifunk.net/Infrastruktur/Datenschutz'
-      }
-    ],
-    'linkList': [
-      {
-        'title': 'Impressum',
-        'href': '/verein/impressum/'
-      },
-      {
-        'title': 'Datenschutz',
-        'href': '/verein/datenschutz/'
+        'href': 'http://freifunk-troisdorf.de/datenschutz/'
       }
     ]
   };
