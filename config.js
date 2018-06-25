@@ -4,27 +4,15 @@ module.exports = function () {
     'nodeInfos': [
       {
         'name': 'Clientstatistik',
-        'href': 'https://grafana.bremen.freifunk.net/d/000000002/node?var-node={NODE_ID}',
-        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000002/node?panelId=1&var-node={NODE_ID}&from=now-86399s&width=650&height=350&theme=light',
-        'title': 'Entwicklung der Anzahl der Clients innerhalb des letzten Tages'
+        'href': 'https://statistik.freifunk-troisdorf.de/render/d-solo/oUBqc1Wmk/nodes?orgId=1&var-hostname={NODE_NAME}&refresh=10s&panelId=2&theme=light&width=1000&height=500&tz=UTC%2B02%3A00',
+        'image': 'https://statistik.freifunk-troisdorf.de/render/d-solo/oUBqc1Wmk/nodes?orgId=1&var-hostname={NODE_NAME}&refresh=10s&panelId=2&theme=light&width=1000&height=500&tz=UTC%2B02%3A00',
+        'title': 'Knoten {NODE_ID} - weiteren Statistiken'
       },
       {
-        'name': 'Trafficstatistik',
-        'href': 'https://grafana.bremen.freifunk.net/d/000000002/node?var-node={NODE_ID}',
-        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000002/node?panelId=2&var-node={NODE_ID}&from=now-86399s&width=650&height=350&theme=light',
-        'title': 'Entwicklung des Traffic innerhalb des letzten Tages'
-      },
-      {
-        'name': 'Hardwareauslastung',
-        'href': 'https://grafana.bremen.freifunk.net/d/000000002/node?var-node={NODE_ID}',
-        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000002/node?panelId=4&var-node={NODE_ID}&from=now-86399s&width=650&height=350&theme=light',
-        'title': 'Loadavg und Arbeitspeicherauslastung innerhalb des letzten Tages'
-      },
-      {
-        'name': 'Airtime',
-        'href': 'https://grafana.bremen.freifunk.net/d/000000002/node?var-node={NODE_ID}',
-        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000002/node?panelId=5&var-node={NODE_ID}&from=now-86399s&width=650&height=350&theme=light',
-        'title': 'Auslastung des WLAN-Frequenz innerhalb des letzten Tages'
+        'name': 'Traffic',
+        'href': 'https://statistik.freifunk-troisdorf.de/render/d-solo/oUBqc1Wmk/nodes?orgId=1&var-hostname={NODE_NAME}&refresh=10s&panelId=3&theme=light&width=1000&height=500&tz=UTC%2B02%3A00',
+        'image': 'https://statistik.freifunk-troisdorf.de/render/d-solo/oUBqc1Wmk/nodes?orgId=1&var-hostname={NODE_NAME}&refresh=10s&panelId=3&theme=light&width=1000&height=500&tz=UTC%2B02%3A00',
+        'title': 'Knoten {NODE_ID} - weiteren Statistiken'
       }
     ],
     'linkInfos': [
