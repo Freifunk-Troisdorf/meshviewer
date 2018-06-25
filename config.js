@@ -16,12 +16,16 @@ module.exports = function () {
       }
     ],
     // Array of data provider are supported
-    'dataPath': ['https://downloads.bremen.freifunk.net/data/'],
-    'siteName': 'Freifunk Bremen',
+    'dataPath': [
+      'https://map.freifunk-troisdorf.de/data/tdf4/',
+      'https://map.freifunk-troisdorf.de/data/tdf5/',
+      'https://map.freifunk-troisdorf.de/data/tdf6/'
+    ],
+    'siteName': 'Freifunk Troisdorf',
     'maxAge': 7,
     'mapLayers': [
       {
-        'name': 'Freifunk Regensburg',
+        'name': 'Freifunk Troisdorf',
         // Please ask Freifunk Regensburg before using its tile server c- example with retina tiles
         'url': 'https://{s}.tiles.ffrgb.net/{z}/{x}/{y}{retina}.png',
         'config': {
@@ -71,19 +75,27 @@ module.exports = function () {
     'fixedCenter': [
     // Northwest
       [
-        53.27917,
-        8.31390
+        50.8428,
+        7.0367
       ],
       // Southeast
       [
-        52.9734,
-        9.2037
+        50.776,
+        7.1919
       ]
     ],
     'siteNames': [
       {
-        'site': 'ffhb',
-        'name': 'Freifunk Bremen'
+        'site': 'tdf',
+        'name': 'Troisdorf'
+      },
+      {
+        'site': 'inn',
+        'name': 'Innenstadt'
+      },
+      {
+        'site': 'flu',
+        'name': 'Soziale Netze'
       }
     ],
     'linkList': [
