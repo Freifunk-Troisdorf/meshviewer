@@ -15,30 +15,6 @@ module.exports = function () {
         'title': 'Knoten {NODE_ID} - weiteren Statistiken'
       }
     ],
-    'linkInfos': [
-      {
-        'name': 'Statistik für alle Links zwischen diese Knoten',
-        'href': 'https://grafana.bremen.freifunk.net/d/000000002/node?var-node={SOURCE_ID}&var-nodetolink={TARGET_ID}',
-        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000002/node?panelId=7&var-node={SOURCE_ID}&var-nodetolink={TARGET_ID}&from=now-86399s&width=650&height=350&theme=light',
-        'title': 'Linkstatistik des letzten Tages, min und max aller Links zwischen diesen Knoten'
-      }
-    ],
-    'linkTypeInfos': [
-      {
-        'name': 'Statistik für {TYPE}',
-        'href': 'https://grafana.bremen.freifunk.net/d/000000002/node?var-node={SOURCE_ID}&var-nodetolink={TARGET_ID}&var-source_mac={SOURCE_ADDR}&var-target_mac={TARGET_ADDR}',
-        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000002/node?panelId=8&var-node={SOURCE_ID}&var-nodetolink={TARGET_ID}&var-source_mac={SOURCE_ADDR}&var-target_mac={TARGET_ADDR}&from=now-86399s&width=650&height=350&theme=light',
-        'title': 'Linkstatistik des letzten Tages des einzelnen Links in beide Richtungen'
-      }
-    ],
-    'globalInfos': [
-      {
-        'name': 'Wochenstatistik',
-        'href': 'https://grafana.bremen.freifunk.net/d/000000001/globals',
-        'image': 'https://grafana.bremen.freifunk.net/render/d-solo/000000001/globals?panelId=2&from=now-7d&width=650&height=350&theme=light',
-        'title': 'Entwicklung der Anzahl der Knoten und der Clients innerhalb der letzten 7 Tage'
-      }
-    ],
     // Array of data provider are supported
     'dataPath': ['https://downloads.bremen.freifunk.net/data/'],
     'siteName': 'Freifunk Bremen',
