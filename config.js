@@ -131,6 +131,16 @@ module.exports = function () {
         'title': 'Datenschutz',
         'href': 'https://wiki.bremen.freifunk.net/Infrastruktur/Datenschutz'
       }
+    ],
+    'linkList': [
+      {
+        'title': 'Impressum',
+        'href': '/verein/impressum/'
+      },
+      {
+        'title': 'Datenschutz',
+        'href': '/verein/datenschutz/'
+      }
     ]
   };
 };
