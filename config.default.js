@@ -3,7 +3,7 @@ module.exports = function () {
     'reverseGeocodingApi': 'https://nominatim.openstreetmap.org/reverse',
     'maxAge': 14,
     'maxAgeAlert': 3,
-    'nodeZoom': 18,
+    'nodeZoom': 20,
     'labelZoom': 13,
     'clientZoom': 15,
     'fullscreen': true,
