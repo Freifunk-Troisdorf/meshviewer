@@ -35,8 +35,8 @@ module.exports = function () {
         }
       },
       {
-        'name': 'Freifunk Bremen',
-        'url': '//tiles.bremen.freifunk.net/{z}/{x}/{y}{retina}.png',
+        'name': 'Freifunk Testing',
+        'url': 'http://93.241.53.101:8889/styles/osm-bright/{z}/{x}/{y}.png',
         'config': {
           'maxZoom': 20,
           'type': 'osm',
