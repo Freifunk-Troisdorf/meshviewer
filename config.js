@@ -36,7 +36,7 @@ module.exports = function () {
       },
       {
         'name': 'Freifunk Testing',
-        'url': 'http://93.241.53.101:8889/styles/osm-bright/{z}/{x}/{y}.png',
+        'url': 'https://tiles.freifunk-rhein-sieg.net/styles/osm-bright/{z}/{x}/{y}.png',
         'config': {
           'maxZoom': 20,
           'type': 'osm',
