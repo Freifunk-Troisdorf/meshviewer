@@ -26,21 +26,21 @@ module.exports = function () {
     'mapLayers': [
       {
         'name': 'Freifunk Troisdorf',
+        'url': 'https://tiles.freifunk-rhein-sieg.net/styles/osm-bright/{z}/{x}/{y}.png',
+        'config': {
+          'maxZoom': 20,
+          'type': 'osm',
+          'attribution': '<a href="https://github.com/mapbox/mapbox-studio-osm-bright.tm2">Design</a> © <a href="https://www.mapbox.com/">Mapbox</a>, <a href="http://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a> — Daten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }
+      },
+      {
+        'name': 'Freifunk Regensburg',
         // Please ask Freifunk Regensburg before using its tile server c- example with retina tiles
         'url': 'https://{s}.tiles.ffrgb.net/{z}/{x}/{y}{retina}.png',
         'config': {
           'maxZoom': 20,
           'subdomains': '1234',
           'attribution': '<a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>'
-        }
-      },
-      {
-        'name': 'Freifunk Testing',
-        'url': 'https://tiles.freifunk-rhein-sieg.net/styles/osm-bright/{z}/{x}/{y}.png',
-        'config': {
-          'maxZoom': 20,
-          'type': 'osm',
-          'attribution': '<a href="https://github.com/mapbox/mapbox-studio-osm-bright.tm2">Design</a> © <a href="https://www.mapbox.com/">Mapbox</a>, <a href="http://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a> — Daten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }
       },
       {
