@@ -19,8 +19,7 @@ module.exports = function () {
     'dataPath': [
       'https://map.freifunk-troisdorf.de/data/tdf4/',
       'https://map.freifunk-troisdorf.de/data/tdf5/',
-      'https://map.freifunk-troisdorf.de/data/tdf6/',
-      'https://map.freifunk-troisdorf.de/data/tdf7/'
+      'https://map.freifunk-troisdorf.de/data/tdf6/'
     ],
     'siteName': 'Freifunk Troisdorf',
     'maxAge': 7,
