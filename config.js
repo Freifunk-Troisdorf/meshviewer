@@ -27,10 +27,9 @@ module.exports = function () {
       {
         'name': 'OSM',
         // Please ask Freifunk Regensburg before using its tile server c- example with retina tiles
-        'url': 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        'url': 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
         'config': {
           'maxZoom': 20,
-          'subdomains': '1234',
           'attribution': '<a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>'
         }
       },
