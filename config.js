@@ -29,7 +29,7 @@ module.exports = function () {
         // Please ask Freifunk Regensburg before using its tile server c- example with retina tiles
         'url': 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
         'config': {
-          'maxZoom': 20,
+          'maxZoom': 19,
           'attribution': '<a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>'
         }
       },
