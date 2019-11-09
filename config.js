@@ -25,6 +25,15 @@ module.exports = function () {
     'maxAge': 7,
     'mapLayers': [
       {
+        'name': 'Freifunk Rhein-Sieg',
+        // Please ask Freifunk Regensburg before using its tile server c- example with retina tiles
+        'url': 'https://tiles.freifunk-rhein-sieg.net/{z}/{x}/{y}.png',
+        'config': {
+          'maxZoom': 19,
+          'attribution': '<a href="https://freifunk-rhein-sieg.net/" target="_blank">&copy; Freifunk-Rhein-Sieg (Stefan Hoffmann)</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>'
+        }
+      },
+      {
         'name': 'OSM',
         // Please ask Freifunk Regensburg before using its tile server c- example with retina tiles
         'url': 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
