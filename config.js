@@ -26,19 +26,18 @@ module.exports = function () {
     'mapLayers': [
       {
         'name': 'Freifunk Rhein-Sieg',
-        // Please ask Freifunk Regensburg before using its tile server c- example with retina tiles
+        // Please ask Freifunk Rhein Sieg before using its tile server c- example with retina tiles
         'url': 'https://tiles.freifunk-rhein-sieg.net/tile/{z}/{x}/{y}.png',
         'config': {
-          'maxZoom': 19,
+          'maxZoom': 20,
           'attribution': '<a href="https://freifunk-rhein-sieg.net/" target="_blank">&copy; Freifunk-Rhein-Sieg (Stefan Hoffmann)</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>'
         }
       },
       {
         'name': 'OSM',
-        // Please ask Freifunk Regensburg before using its tile server c- example with retina tiles
         'url': 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
         'config': {
-          'maxZoom': 19,
+          'maxZoom': 20,
           'attribution': '<a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>'
         }
       },
@@ -46,7 +45,7 @@ module.exports = function () {
         'name': 'OpenStreetMap.HOT',
         'url': 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
         'config': {
-          'maxZoom': 19,
+          'maxZoom': 20,
           'attribution': '&copy; Openstreetmap France | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }
       },
