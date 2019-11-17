@@ -71,7 +71,7 @@ module.exports = function () {
         7.1919
       ]
     ],
-    'siteNames': [
+    'domainNames': [
       {
         'site': 'tdf',
         'name': 'Troisdorf'
