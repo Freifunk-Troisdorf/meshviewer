@@ -5,8 +5,8 @@ FROM node:12.12.0-stretch as builder
 RUN node --version && npm --version && yarn --version
 
 # install gulp
-RUN npm i gulp-cli -g
-RUN npm i gulp -g
+RUN npm i gulp-cli
+RUN npm i gulp
 
 # run yarn for prerequisits
 RUN yarn
