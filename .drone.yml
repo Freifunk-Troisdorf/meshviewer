@@ -4,17 +4,23 @@ name: meshviewer build
 clone:
   depth: 50
 
-steps:
-- name: submodules
-  image: docker:git
-  commands:
-  - git submodule update --recursive --init
+# steps:
+# - name: clone git
+#   image: docker:git
+#   commands:
+#   - git submodule update --recursive --init
 
 - name: build on node 12
   image: node:12.12.0-stretch
   commands:
+  - node --version
+  - npm --version
+  - yarn --version
   - pwd
   - ls -alh
+  - npm i gulp-cli -g
+  - yarn
+  - gulp
 
 # - name: backup-old-firmware
 #   image: appleboy/drone-ssh
