@@ -6,6 +6,7 @@ RUN node --version && npm --version && yarn --version
 
 # install gulp
 RUN npm i gulp-cli -g
+RUN ls -alh /root/local/lib/node_modules
 
 # run yarn for prerequisits
 RUN yarn
