@@ -7,10 +7,11 @@ WORKDIR /mesh
 RUN node --version && npm --version && yarn --version
 
 # install gulp
-RUN npm i gulp-cli
+RUN npm i gulp-cli -g
+RUN npm i gulp -g
 
 # run yarn for prerequisits
-RUN ls -alh
+RUN ls -alh /mesh
 RUN yarn
 
 # run gulp to build app
