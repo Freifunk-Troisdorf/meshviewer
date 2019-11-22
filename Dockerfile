@@ -6,13 +6,12 @@ RUN node --version && npm --version && yarn --version
 
 # install gulp
 RUN npm i gulp-cli -g
-RUN ls -alh /root/local/lib/node_modules
 
 # run yarn for prerequisits
 RUN yarn
 
 # run gulp to build app
-RUN gulp
+RUN /usr/local/bin/gulp
 
 
 # build docker container
