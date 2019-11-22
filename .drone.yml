@@ -4,7 +4,7 @@ name: meshviewer build
 clone:
   depth: 50
 
-# steps:
+steps:
 # - name: clone git
 #   image: docker:git
 #   commands:
