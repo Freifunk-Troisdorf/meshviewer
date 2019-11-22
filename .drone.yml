@@ -5,7 +5,7 @@ steps:
 - name: docker  
   image: plugins/docker
   settings:
-    repo: fftdf/meshviewer
+    repo: thunderstorm99/meshviewer
     target: meshviewer
     username:
       from_secret: docker_username
