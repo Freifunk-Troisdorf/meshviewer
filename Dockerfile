@@ -9,6 +9,7 @@ RUN npm i gulp-cli
 RUN npm i gulp
 
 # run yarn for prerequisits
+RUN ls -alh
 RUN yarn
 
 # run gulp to build app
