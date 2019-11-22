@@ -13,6 +13,7 @@ steps:
 - name: build on node 12
   image: node:12.12.0-stretch
   commands:
+  - pwd
   - ls -alh
 
 # - name: backup-old-firmware
