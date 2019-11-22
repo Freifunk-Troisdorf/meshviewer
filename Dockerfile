@@ -12,7 +12,7 @@ RUN npm i gulp -g
 RUN yarn
 
 # run gulp to build app
-RUN /usr/local/bin/gulp
+RUN gulp
 
 
 # build docker container
