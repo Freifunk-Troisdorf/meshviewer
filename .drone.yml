@@ -7,6 +7,8 @@ steps:
   settings:
     repo: fftdf/meshviewer
     target: meshviewer
-    username: from_secret: docker_username
-    password: from_secret: docker_password
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
 
