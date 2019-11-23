@@ -30,7 +30,7 @@ module.exports = function () {
         'url': 'https://tiles.freifunk-rhein-sieg.net/tile/{z}/{x}/{y}.png',
         'config': {
           'maxZoom': 20,
-          'attribution': '<a href="https://freifunk-rhein-sieg.net/" target="_blank">&copy; Freifunk-Rhein-Sieg (Stefan Hoffmann)</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>'
+          'attribution': '<a href="https://freifunk-rhein-sieg.net/" target="_blank">&copy; Freifunk-Rhein-Sieg</a> <a href="http://www.openstreetmap.org/about/" target="_blank">&copy; OpenStreetMap contributors</a>'
         }
       },
       {
